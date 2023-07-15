@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>CLOCK</h1>
+    <span id="timer"></span>
+    <script>
+        var time=document.getElementById("timer");
+       
+         function xyz(second){
+            return second<10? "0"+second:second;
+        }
+        function abc(){
+            var dt= new Date();
+            var hour=dt.getHours();
+            var ampm=hour<13? "am":"pm";
+            time.innerHTML=xyz(hour)+":"+xyz(dt.getMinutes())+":"+ xyz(dt.getSeconds())+" "+ampm;
+
+
+        setTimeout(function(){
+            abc();
+        },100)
+    }
+    abc();
+    </script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+

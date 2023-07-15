@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div> 
+        <input type="text" id="uname" placeholder="Username" onkeyup="ChangeKey1(this)">
+        <label for="uname" id="username"></label>
+    </div>
+   
+    <div>
+        <input type="text" id="email" placeholder="Email" onkeyup="ChangeKey2(this)">
+        <label for="email" id="mail"></label>
+    </div>
+   
+    <div>
+        <input type="password" id="pwd" placeholder="**********">
+        <label for="pwd" id="password"></label>
+    </div>
+
+    <div>
+         <button type="button">Submit</button>
+    </div>
+
+
+   <script>
+
+       function ChangeKey1(event){
+        var label=document.getElementById("username");
+        var val=Validate(event.value);
+        console.log(event.value);
+            if(val){
+                label.innerHTML=val;
+                
+            }
+            else{
+               label.innerHTML=val; 
+            }
+        
+        }
+
+        function ChangeKey2(event){
+        var label=document.getElementById("mail");
+        var val=Validate2(event.value);
+        console.log(event.value);
+            if(val){
+                label.innerHTML=val;
+                
+            }
+            else{
+               label.innerHTML=val; 
+            }
+        
+        }
+    
+
+
+        function Validate(value){
+            var regExp=/^[a-z][a-z_]*$/;
+            var dt=regExp.test(value);
+            console.log(dt);
+            if(dt){
+                return '';
+            }
+            else{
+                return "Invalid Entry";
+            }
+            
+        }
+       
+
+        function Validate2(value){
+            var regExp=/^[a-z0-9][@a-z][.a-z{3}]*$/;
+            var dt=regExp.test(value);
+            console.log(dt);
+            if(dt){
+                return '';
+            }
+            else{ 
+                return "invalid entry";
+            }
+            
+        }
+        
+
+   </script>
+   
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>
